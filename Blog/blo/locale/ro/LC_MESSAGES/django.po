@@ -4,11 +4,11 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
-msgid ""
-msgstr ""
+msgid "ioanaydgn"
+msgstr "ioanaydgn"
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-17 18:46+0300\n"
+"POT-Creation-Date: 2022-06-17 19:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,34 +19,38 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
 
-#: models.py:9
+#: blo/models.py:12
 msgid "Title"
 msgstr "Titlu"
 
-#: models.py:10
+#: blo/models.py:13
+msgid "Slug"
+msgstr "Slug"
+
+#: blo/models.py:14
 msgid "Is Draft"
 msgstr "Proiect"
 
-#: models.py:11
+#: blo/models.py:15
 msgid "Thumbnail"
 msgstr "Miniatură"
 
-#: models.py:12
+#: blo/models.py:16
 msgid "Keywords"
 msgstr "Cuvinte cheie"
 
-#: models.py:13
+#: blo/models.py:17
 msgid "Publish Date"
 msgstr "Data publicării"
 
-#: models.py:14
+#: blo/models.py:18
 msgid "Content"
 msgstr "Cuprins"
 
-#: models.py:17
+#: blo/models.py:21
 msgid "Post"
 msgstr "Scris"
 
-#: models.py:18
+#: blo/models.py:22
 msgid "Posts"
 msgstr "articole"
