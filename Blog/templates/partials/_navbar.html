@@ -14,5 +14,11 @@
       <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
       <li><a href="#" class="nav-link px-2 link-dark">Posts</a></li>
       <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+      <form class="d-flex" role="search" action={% url 'blo:search' %}>
+        <input class="form-control me-2" name="q" type="search" placeholder="Cauta" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Cauta</button>
+      </form>
+    </div>
+      
   </header>
 </div>

@@ -1,7 +1,21 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block body %}
-    {% for i in posts %}
-    <p>{{ i.title }}</p>
+<div class="row">
+    {% for post in posts %}
+    <div class="col-lg-4">
+        <div class="card">
+            <a href="{{ post.get_absolute_url }}">
+                <img src="{{ post.thumb.url }}" class="card-img-top" alt="{{ post.title }}">
+            </a>
+            <div class="class-body">
+                <a href="{{post.get_absolute_url}}">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                </a>
+                <p class="card-text">{{ post.content|truncatechars_html:50 }}</p>
+            </div>
+        </div>
+    </div>
     {% endfor %}
+</div>
 {% endblock body %}

@@ -1,10 +1,6 @@
-from ast import keyword
-from audioop import add
-from importlib.resources import contents
-from operator import truediv
-from tabnanny import verbose
-from time import timezone
 from django.db import models
+from django.urls import reverse
+from django.utils import timezone
 from django.utils.text import slugify
 from django.utils.translation import gettext as _
 
@@ -12,8 +8,8 @@ class Post(models.Model):
     title = models.CharField(_("Title"), max_length=255)
     slug = models.SlugField(_("Slug"), null=True, blank=True, unique=True)
     draft = models.BooleanField(_("Is Draft"), default=True)
-    thumb = models.ImageField(_("Thumbnail"))
-    keywords = models.CharField(_("Keywords"), max_length=2048,null=True, blank=True)
+    thumb = models.ImageField(_("Thumbnail"), upload_to="thumbs/")
+    keywords = models.CharField(_("Keywords"), max_length=2048, null=True, blank=True)
     date = models.DateTimeField(_("Publish Date"), null=True, blank=True)
     content = models.TextField(_("Content"))
 
@@ -48,3 +44,7 @@ class Post(models.Model):
                     add_num = 1
                 continue
         super().save(*args,**kwargs)
+    
+    def get_absolute_url(self):
+        return reverse('blo:post', args=[str(self.slug)])
+    

@@ -1,9 +1,11 @@
 from django.urls import path
-from blo.views import IndexView, PostView
+from blo.views import IndexView, PostView, SearchView
 
 app_name = "blo"
 
 urlpatterns = [
     path('', IndexView.as_view(), name="index"),
-    path('<slug:slug>/', PostView.as_view(), name="post")
+    path('search/', SearchView.as_view(), name='search'),
+    path('<slug:slug>/', PostView.as_view(), name="post"),
+    
 ]

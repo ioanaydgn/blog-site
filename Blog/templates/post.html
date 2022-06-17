@@ -1,12 +1,18 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load markdown %}
 
-{% block title %}
-{{ post.title }}
-{% endblock title %}
+{% block title %}{{ post.title }}{% endblock title %}
+
+{% block header %}
+<div class="card">
+    <a href="{{ post.thumb.url }}" target="_blank">
+        <img src="{{ post.thumb.url }}" class="card-img-top" alt="{{ post.title }}">
+    </a>
+</div>
+{% endblock header %}
 
 {% block body %}
-  <h1>{{ post.title }}</h1>
-    <img src="{{ post.thumb.url }}", height="200px" width="50px"></img>
-    <p>{{ post.date}}</p>
-    <p>{{ post.content|safe}}</p>
+    <h1>{{ post.title }}</h1>
+    <p><small class="post-date">{{ post.date|date }}</small></p>
+    <div class="post-body">{{ post.content|render_md }}</div>
 {% endblock body %}
